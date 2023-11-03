@@ -2,9 +2,9 @@
 
 namespace Deinte\LaravelServiceTags;
 
+use Deinte\LaravelServiceTags\Commands\LaravelServiceTagsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Deinte\LaravelServiceTags\Commands\LaravelServiceTagsCommand;
 
 class LaravelServiceTagsServiceProvider extends PackageServiceProvider
 {
