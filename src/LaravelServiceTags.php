@@ -13,7 +13,7 @@ class LaravelServiceTags
     public function tagInterface(string $interface, string $tag): self
     {
         ($this->tagger)($interface, $tag);
-        
+
         return $this;
     }
 }

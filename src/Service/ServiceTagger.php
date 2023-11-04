@@ -2,10 +2,7 @@
 
 namespace Deinte\LaravelServiceTags\Service;
 
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Cache;
-use ReflectionClass;
-use Throwable;
 
 class ServiceTagger
 {
@@ -14,7 +11,7 @@ class ServiceTagger
     ) {
     }
 
-    function __invoke(array|string $instancesOfFQCN, array|string $tags): void
+    public function __invoke(array|string $instancesOfFQCN, array|string $tags): void
     {
         if (is_array($instancesOfFQCN)) {
             foreach ($instancesOfFQCN as $instance) {
@@ -52,7 +49,7 @@ class ServiceTagger
         $taggedServices[$tags][$instancesOfFQCN] = [];
 
         foreach ($classmap as $class => $value) {
-            if (!in_array($instancesOfFQCN, $value, true)) {
+            if (! in_array($instancesOfFQCN, $value, true)) {
                 continue;
             }
 
