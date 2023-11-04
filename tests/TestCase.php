@@ -2,9 +2,9 @@
 
 namespace Deinte\LaravelServiceTags\Tests;
 
+use Deinte\LaravelServiceTags\LaravelServiceTagsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Deinte\LaravelServiceTags\LaravelServiceTagsServiceProvider;
 
 class TestCase extends Orchestra
 {
