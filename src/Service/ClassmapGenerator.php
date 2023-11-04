@@ -3,7 +3,6 @@
 namespace Deinte\LaravelServiceTags\Service;
 
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Facades\Cache;
 use ReflectionClass;
 
 class ClassmapGenerator
@@ -14,7 +13,7 @@ class ClassmapGenerator
     {
         $classmap = config('app.instance_of.classmap');
 
-        if (null === $classmap || 0 === count($classmap)) {
+        if ($classmap === null || count($classmap) === 0) {
             $fileManager = app(Filesystem::class);
 
             $classmapFile = app()->basePath('vendor/composer/autoload_classmap.php');
@@ -59,11 +58,11 @@ class ClassmapGenerator
             return false;
         }
 
-        if (!$this->classIsIncluded($class)) {
+        if (! $this->classIsIncluded($class)) {
             return false;
         }
 
-        if (!class_exists($class)) {
+        if (! class_exists($class)) {
             return false;
         }
 
